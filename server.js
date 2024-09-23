@@ -15,10 +15,7 @@ app.use(bodyParser.json());
 app.use('/api', transactionRoutes);
 
 // Connect to MongoDB
-mongoose.connect(process.env.DB_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
+mongoose.connect(process.env.DB_URL)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Failed to connect to MongoDB', err));
 
